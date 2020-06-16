@@ -17,7 +17,7 @@ const filterProducts = (products = [], category) =>
   !category || category === "All"
     ? products
     : products.filter(
-        (product) => product.toLowerCase() === category.toLowerCase()
+        (product) => product.category.toLowerCase() === category.toLowerCase()
       );
 
 export const ShopConnector = connect(
