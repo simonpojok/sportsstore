@@ -21,4 +21,4 @@ export class DataGetter extends React.Component {
     render() {
     return <React.Fragment>{this.props.children}</React.Fragment>
     }
-}
+} 

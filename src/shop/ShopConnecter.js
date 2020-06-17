@@ -11,6 +11,7 @@ import {
   clearCart,
 } from "../data/CartActionCreators";
 import { CartDetails } from "./CartDetails";
+import { DataGetter } from "../data/DataGetter";
 
 const mapStateToProps = (dataStore) => ({
   ...dataStore,
@@ -24,13 +25,6 @@ const mapDispatchToProps = {
   clearCart,
 };
 
-const filterProducts = (products = [], category) =>
-  !category || category === "All"
-    ? products
-    : products.filter(
-        (product) => product.category.toLowerCase() === category.toLowerCase()
-      );
-
 export const ShopConnector = connect(
   mapStateToProps,
   mapDispatchToProps
@@ -38,27 +32,23 @@ export const ShopConnector = connect(
   class extends React.Component {
     componentDidMount() {
       this.props.loadData(DataTypes.CATEGORIES);
-      this.props.loadData(DataTypes.PRODUCTS);
     }
     render() {
       console.log(this.props);
       return (
         <Switch>
-          <Route
-            path="/shop/products/:category?"
-            render={(routeProps) => (
-              <Shop
-                {...this.props}
-                {...routeProps}
-                products={filterProducts(
-                  this.props.products,
-                  routeProps.match.params.category
-                )}
-              />
-            )}
-          />
-          <Route path="/shop/cart" render={(routeProps) => <CartDetails { ...this.props } { ...routeProps } /> } />
-          <Redirect to="/shop/products" />
+          <Redirect from="/shop/products/:category"
+          to="/shop/products/:category/:page"/>
+          <Route path={ "/shop/products/:category/:page"}
+            render={ (routeProps) => (
+              <DataGetter {...this.props } { ...routeProps}>
+                <Shop {...this.props } { ...routeProps } />
+              </DataGetter>
+            )} />
+          <Route path="/shop/cart" render={ (routeProps) => (
+            <CartDetails { ...this.props } { ...routeProps } />
+          )} />
+          <Redirect to="/shop/products/all/1" />
         </Switch>
       );
     }
