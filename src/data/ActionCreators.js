@@ -9,3 +9,8 @@ export const loadData = (dataType) => ({
     .GetData(dataType)
     .then((response) => ({ dataType, data: response.data })),
 });
+
+// payload: {
+//     dataType: "load",
+//     data: { }
+// }

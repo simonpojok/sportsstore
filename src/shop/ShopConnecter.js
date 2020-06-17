@@ -41,6 +41,7 @@ export const ShopConnector = connect(
       this.props.loadData(DataTypes.PRODUCTS);
     }
     render() {
+      console.log(this.props);
       return (
         <Switch>
           <Route
