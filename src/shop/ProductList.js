@@ -13,7 +13,15 @@ export class ProductList extends React.Component {
             ${product.price.toFixed(2)}
           </span>
         </h4>
-        <div className="card-text bg-white p-1">{product.description}</div>
+        <div className="card-text bg-white p-1">
+          {product.description}
+          <button
+            className="btn btn-success btn-sm float-right"
+            onClick={() => this.props.addToCart(p)}
+          >
+            Add To Cart
+          </button>
+        </div>
       </div>
     ));
   }
