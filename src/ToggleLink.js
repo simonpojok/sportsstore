@@ -8,7 +8,7 @@ export class ToggleLink extends React.Component {
         path={this.props.to}
         exact={this.props.exact}
         children={(routeProps) => {
-            console.log(routeProps);
+            // console.log(routeProps);
           const baseClasses = this.props.className || "m-2 btn btn-block";
           const activeClass = this.props.activeClass || "btn-primary";
           const inActiveClass = this.props.inActiveClass || "btn-secondary";

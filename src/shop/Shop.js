@@ -4,6 +4,7 @@ import { ProductList } from "./ProductList";
 
 export class Shop extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <div className="container-fluid">
         <div className="row">

@@ -1,6 +1,7 @@
 import { ActionTypes } from "./Types";
 
 export const CartReducer = (storeData, action) => {
+  console.log(storeData, action);
   let newStore = { cart: [], cartItems: 0, cartPrice: 0, ...storeData };
   switch (action.type) {
     case ActionTypes.CARD_ADD:
