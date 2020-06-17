@@ -7,6 +7,8 @@ export const ShopReducer = (storeData, action) => {
       return {
         [action.payload.dataType]: action.payload.data,
         ...storeData,
+        [`${action.payload.dataType}_total`]: action.payload.total,
+        [`${action.payload.dataType}_params`]: action.payload.params
       };
 
     default:
