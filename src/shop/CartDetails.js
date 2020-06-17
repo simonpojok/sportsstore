@@ -22,7 +22,7 @@ export class CartDetails extends React.Component {
             <CartDetailsRows
               cart={this.props.cart}
               cartPrice={this.props.cartPrice}
-              updateQuantity={this.props.updateQuantity}
+              updateQuantity={this.props.updateCartQuantity}
               removeFromCart={this.props.removeFromCart}
             />
           </tbody>

@@ -4,14 +4,18 @@ import { ProductList } from "./ProductList";
 import { CartSummary } from "./CartSummary";
 
 export class Shop extends React.Component {
+  handleAddToCart = (...args) => {
+    this.props.addToCart(...args);
+    this.props.history.push("/shop/cart");
+  };
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="container-fluid">
         <div className="row">
           <div className="col bg-dark text-white">
             <div className="navbar-brand">SPORTS STORE</div>
-            <CartSummary { ...this.props } />
+            <CartSummary {...this.props} />
           </div>
         </div>
         <div className="row">
@@ -22,7 +26,11 @@ export class Shop extends React.Component {
             />
           </div>
           <div className="col-9 p-2">
-            <ProductList products={this.props.products} {...this.props }/>
+            <ProductList
+              products={this.props.products}
+              {...this.props}
+              addToCart={this.handleAddToCart}
+            />
           </div>
         </div>
       </div>

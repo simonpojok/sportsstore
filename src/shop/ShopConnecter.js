@@ -56,7 +56,7 @@ export const ShopConnector = connect(
               />
             )}
           />
-          <Route to="/shop/cart" render={(routeProps) => <CartDetails { ...this.props } { ...routeProps } /> } />
+          <Route path="/shop/cart" render={(routeProps) => <CartDetails { ...this.props } { ...routeProps } /> } />
           <Redirect to="/shop/products" />
         </Switch>
       );
