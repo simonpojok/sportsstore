@@ -38,7 +38,7 @@ export const ShopConnector = connect(
       return (
         <Switch>
           <Redirect from="/shop/products/:category"
-          to="/shop/products/:category/:page"/>
+          to="/shop/products/:category/1" exact={true}/>
           <Route path={ "/shop/products/:category/:page"}
             render={ (routeProps) => (
               <DataGetter {...this.props } { ...routeProps}>
