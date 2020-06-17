@@ -22,7 +22,7 @@ export class Shop extends React.Component {
             />
           </div>
           <div className="col-9 p-2">
-            <ProductList products={this.props.products} />
+            <ProductList products={this.props.products} {...this.props }/>
           </div>
         </div>
       </div>

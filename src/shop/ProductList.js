@@ -1,7 +1,9 @@
 import React from "react";
 
 export class ProductList extends React.Component {
+
   render() {
+    console.log(this.props);
     if (this.props.products == null || this.props.products.length === 0) {
       return <h5 className="p-2">No Products</h5>;
     }
@@ -17,7 +19,7 @@ export class ProductList extends React.Component {
           {product.description}
           <button
             className="btn btn-success btn-sm float-right"
-            onClick={() => this.props.addToCart(p)}
+            onClick={() => this.props.addToCart(product)}
           >
             Add To Cart
           </button>
