@@ -13,6 +13,7 @@ export class CartDetailsRows extends React.Component {
         </tr>
       );
     } else {
+        console.log(this.props);
       return (
         <React.Fragment>
           {this.props.cart.map((item) => (
