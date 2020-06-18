@@ -23,3 +23,8 @@ const mergeProps = (dataStore, actionCreators, router) => ({
       `/shop/products/${router.match.params.category}/${page}`
     ),
 });
+
+export const ProductPageConnect = (PageComponent) =>
+  withRouter(
+    connect(mapStateToProps, mapDispatchToProps, mergeProps)(PageComponent)
+  );
