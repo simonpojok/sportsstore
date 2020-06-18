@@ -2,6 +2,10 @@ import React from "react";
 import { CategoryNavigation } from "./CategoryNavigation";
 import { ProductList } from "./ProductList";
 import { CartSummary } from "./CartSummary";
+import { ProductPageConnect } from "./ProductPageConnect";
+import { PaginationControls } from "./PaginationControls";
+
+const ProductPages = ProductPageConnect(PaginationControls);
 
 export class Shop extends React.Component {
   handleAddToCart = (...args) => {
@@ -26,6 +30,7 @@ export class Shop extends React.Component {
             />
           </div>
           <div className="col-9 p-2">
+            <ProductPages />
             <ProductList
               products={this.props.products}
               {...this.props}
