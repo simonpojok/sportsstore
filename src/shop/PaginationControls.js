@@ -25,7 +25,7 @@ export class PaginationControls extends React.Component {
             pageCount={this.props.pageCount}
             navigation={this.props.navigateToPage}
           />
-        </div>
+        </div> 
         <div className="form-inline justify-content-center">
           <select
             className="form-control"
