@@ -18,7 +18,7 @@ const mergeProps = (dataStore, actionCreators, router) => ({
     (dataStore.products_total || dataStore.pageSize || 5) /
       (dataStore.pageSize || 5)
   ),
-  navigateTo: (page) =>
+  navigateToPage: (page) =>
     router.history.push(
       `/shop/products/${router.match.params.category}/${page}`
     ),

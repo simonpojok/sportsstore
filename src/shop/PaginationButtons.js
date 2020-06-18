@@ -18,6 +18,7 @@ export class PaginationButtons extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     const current = this.props.currentPage;
     const pageCount = this.props.pageCount;
     const navigate = this.props.navigate;

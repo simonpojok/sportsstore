@@ -17,13 +17,14 @@ export class PaginationControls extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="m-2">
         <div className="text-center m-1">
           <PaginationButtons
             currentPage={this.props.currentPage}
             pageCount={this.props.pageCount}
-            navigation={this.props.navigateToPage}
+            navigate={this.props.navigateToPage}
           />
         </div> 
         <div className="form-inline justify-content-center">
