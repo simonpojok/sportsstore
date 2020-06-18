@@ -21,7 +21,7 @@ export class PaginationControls extends React.Component {
     return (
       <div className="m-2">
         <div className="text-center m-1">
-          <PaginationButtons
+          <PaginationButtons 
             currentPage={this.props.currentPage}
             pageCount={this.props.pageCount}
             navigate={this.props.navigateToPage}

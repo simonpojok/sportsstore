@@ -6,12 +6,15 @@ const dataSource = new RestDataSource();
 export const loadData = (dataType, params) => {
   const data = {
     type: ActionTypes.DATA_LOAD,
-    payload: dataSource.GetData(dataType, params).then((response) => ({
-      dataType,
-      data: response.data,
-      total: Number(response.headers["x-total-count"]),
-      params,
-    })),
+    payload: dataSource.GetData(dataType, params).then((response) => {
+      console.log(response);
+      return {
+        dataType,
+        data: response.data,
+        total: Number(response.headers["x-total-count"]),
+        params,
+      };
+    }),
   };
   // console.log(data);
   return data;
