@@ -1,4 +1,4 @@
-import { ActionTypes } from "./Types";
+import { ActionTypes, DataTypes } from "./Types";
 // import { data as phData } from "./placeholderData";
 import { RestDataSource } from "./RestDataSource";
 const dataSource = new RestDataSource();
@@ -36,5 +36,17 @@ export const setSortProperty = (newProps) => {
   return {
     type: ActionTypes.DATA_SET_SORT_PROPERTY,
     payload: newProps,
+  };
+};
+
+export const plaseOrder = (order) => {
+  return {
+    type: ActionTypes.DATA_STORE,
+    payload: dataSource.StoreData(DataTypes.ORDERS, order).then((response) => {
+      return {
+        dataType: DataTypes.ORDERS,
+        data: response.data,
+      };
+    }),
   };
 };
