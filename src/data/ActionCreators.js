@@ -21,3 +21,17 @@ export const loadData = (dataType, params) => {
 //     dataType: "load",
 //     data: { }
 // }
+
+export const setPageSize = (newSize) => {
+  return {
+    type: ActionTypes.DATA_SET_PAGESIZE,
+    payload: newSize
+  }
+};
+
+export const setSortProperty = (newProps) => {
+  return {
+    type: ActionTypes.DATA_SET_SORT_PROPERTY,
+    payload: newProps
+  }
+};
