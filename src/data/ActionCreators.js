@@ -13,7 +13,7 @@ export const loadData = (dataType, params) => {
       params,
     })),
   };
-  console.log(data);
+  // console.log(data);
   return data;
 };
 

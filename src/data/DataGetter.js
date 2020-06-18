@@ -15,6 +15,7 @@ export class DataGetter extends React.Component {
             "" : this.props.match.params.category
         }
         if (Object.keys(rtData).find((key) => dsData[key] !== rtData[key])) {
+            console.log(rtData, dsData);
             this.props.loadData(DataTypes.PRODUCTS, rtData);
         }
     }
