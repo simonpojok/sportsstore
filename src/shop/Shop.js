@@ -2,10 +2,10 @@ import React from "react";
 import { CategoryNavigation } from "./CategoryNavigation";
 import { ProductList } from "./ProductList";
 import { CartSummary } from "./CartSummary";
-import { ProductPageConnect } from "./ProductPageConnect";
+import { ProductPageConnector } from "./ProductPageConnector";
 import { PaginationControls } from "./PaginationControls";
 
-const ProductPages = ProductPageConnect(PaginationControls);
+const ProductPages = ProductPageConnector(PaginationControls);
 
 export class Shop extends React.Component {
   handleAddToCart = (...args) => {
