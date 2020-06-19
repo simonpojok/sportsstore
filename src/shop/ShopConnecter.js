@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadData } from "../data/ActionCreators";
+import { loadData, plaseOrder } from "../data/ActionCreators";
 import { DataTypes } from "../data/Types";
 import { Shop } from "./Shop";
 import {
@@ -12,6 +12,8 @@ import {
 } from "../data/CartActionCreators";
 import { CartDetails } from "./CartDetails";
 import { DataGetter } from "../data/DataGetter";
+import { Checkout } from "./Checkout";
+import { Thanks } from "./Thanks";
 
 const mapStateToProps = (dataStore) => ({
   ...dataStore,
@@ -23,6 +25,7 @@ const mapDispatchToProps = {
   updateCartQuantity,
   removeFromCart,
   clearCart,
+  plaseOrder,
 };
 
 export const ShopConnector = connect(
@@ -37,17 +40,35 @@ export const ShopConnector = connect(
       console.log(this.props);
       return (
         <Switch>
-          <Redirect from="/shop/products/:category"
-          to="/shop/products/:category/1" exact={true}/>
-          <Route path={ "/shop/products/:category/:page"}
-            render={ (routeProps) => (
-              <DataGetter {...this.props } { ...routeProps}>
-                <Shop {...this.props } { ...routeProps } />
+          <Redirect
+            from="/shop/products/:category"
+            to="/shop/products/:category/1"
+            exact={true}
+          />
+          <Route
+            path={"/shop/products/:category/:page"}
+            render={(routeProps) => (
+              <DataGetter {...this.props} {...routeProps}>
+                <Shop {...this.props} {...routeProps} />
               </DataGetter>
-            )} />
-          <Route path="/shop/cart" render={ (routeProps) => (
-            <CartDetails { ...this.props } { ...routeProps } />
-          )} />
+            )}
+          />
+          <Route
+            path="/shop/cart"
+            render={(routeProps) => (
+              <CartDetails {...this.props} {...routeProps} />
+            )}
+          />
+          <Route
+            path="/shop/checkout"
+            render={(routeProps) => (
+              <Checkout {...this.props} {...routeProps} />
+            )}
+          />
+          <Route
+            path="/shop/thanks"
+            render={(routeProps) => <Thanks {...this.props} {...routeProps} />}
+          />
           <Redirect to="/shop/products/all/1" />
         </Switch>
       );
