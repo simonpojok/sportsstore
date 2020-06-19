@@ -24,6 +24,7 @@ export class ValidatedForm extends React.Component {
       },
       () => {
         if (Object.keys(this.state.validationErrors).length === 0) {
+            // there is no errors
           const data = Object.assign(
             ...Object.entries(this.formElements).map((e) => ({
               [e[0]]: e[1].value,
@@ -36,6 +37,7 @@ export class ValidatedForm extends React.Component {
   };
 
   registerRef = (element) => {
+    console.log(element);
     if (element !== null) {
       this.formElements[element.name] = element;
     }
