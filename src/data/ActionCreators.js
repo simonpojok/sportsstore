@@ -7,7 +7,6 @@ export const loadData = (dataType, params) => {
   const data = {
     type: ActionTypes.DATA_LOAD,
     payload: dataSource.GetData(dataType, params).then((response) => {
-      console.log(response);
       return {
         dataType,
         data: response.data,
@@ -16,15 +15,8 @@ export const loadData = (dataType, params) => {
       };
     }),
   };
-  // console.log(data);
   return data;
 };
-
-// payload: {
-//     dataType: "load",
-//     data: { }
-// }
-
 export const setPageSize = (newSize) => {
   return {
     type: ActionTypes.DATA_SET_PAGESIZE,
