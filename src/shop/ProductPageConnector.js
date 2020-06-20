@@ -6,6 +6,7 @@ const mapStateToProps = (dataStore, ownProps) => {
   return dataStore;
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(dispatch);
   return {
     setPageSize,
     setSortProperty,
