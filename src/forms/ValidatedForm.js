@@ -27,11 +27,9 @@ export class ValidatedForm extends React.Component {
           // there is no errors
           const data = Object.assign(
             ...Object.entries(this.formElements).map((e) => {
-              console.log(e[1]);
               return { [e[0]]: e[1].value };
             })
           );
-          console.log(data);
           this.props.submitCallback(data);
         }
       }
@@ -39,7 +37,6 @@ export class ValidatedForm extends React.Component {
   };
 
   registerRef = (element) => {
-    console.log(element);
     if (element !== null) {
       this.formElements[element.name] = element;
     }

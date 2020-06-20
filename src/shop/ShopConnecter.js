@@ -47,7 +47,6 @@ export const ShopConnector = connect(
     };
     componentDidMount = () => this.props.loadData(DataTypes.CATEGORIES);
     render() {
-      console.log(this.props);
       return (
         <Switch>
           <Redirect

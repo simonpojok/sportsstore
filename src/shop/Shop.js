@@ -13,7 +13,6 @@ export class Shop extends React.Component {
     this.props.history.push("/shop/cart");
   };
   render() {
-    console.log(this.props);
     return (
       <div className="container-fluid">
         <div className="row">

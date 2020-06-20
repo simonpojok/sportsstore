@@ -3,7 +3,6 @@ import React from "react";
 export class ProductList extends React.Component {
 
   render() {
-    console.log(this.props);
     if (this.props.products == null || this.props.products.length === 0) {
       return <h5 className="p-2">No Products</h5>;
     }

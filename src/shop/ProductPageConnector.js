@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 import { setPageSize, setSortProperty } from "../data/ActionCreators";
 
 const mapStateToProps = (dataStore, ownProps) => {
-  console.log(dataStore);
-  console.log(ownProps);
   return dataStore;
 };
 const mapDispatchToProps = (dispatch, ownProps) => {

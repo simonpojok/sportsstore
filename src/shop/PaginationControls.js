@@ -17,7 +17,6 @@ export class PaginationControls extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="m-2">
         <div className="text-center m-1">

@@ -1,5 +1,4 @@
 export const GetMessages = (element) => {
-    console.log(element);
     const messages = [];
     if (element.validity.valueMissing) {
         messages.push("Value required");
