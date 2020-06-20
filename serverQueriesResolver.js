@@ -51,7 +51,7 @@ const resolveOrders = (onlyUnshipped, { page, pageSize, sort }, { db }) => {
 const orders = ({onlyUnshipped = false }, {db}) => ({
     totalSize: () => db.get("orders")
     .filter(o => onlyUnshipped ? o.shipped === false : o ).size().value(),
-    orders: (...args) => resolveProducts(onlyUnshipped, ...args)
+    orders: (...args) => resolveOrders(onlyUnshipped, ...args)
 });
 
 module.exports = { product, products, categories, orders };
