@@ -3,7 +3,6 @@ const jsonServer = require("json-server");
 const chokidar = require("chokidar");
 const cors = require("cors");
 const fs = require("fs");
-cosnt { buildSchema } = require("graphql");
 const graphqlHTTP = require("express-graphql");
 const queryResolvers = require("./serverQueriesResolver");
 const mutationResolvers = require("./serverMutationsResolver");

@@ -5,7 +5,8 @@ input productStore {
     price: Float!
 }
 input productUpdate {
-    name: String!
+    id: ID!
+    name: String
     description: String
     category: String
     price: Float
