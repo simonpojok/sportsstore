@@ -44,6 +44,7 @@ export class ValidatedForm extends React.Component {
   };
 
   renderElement = (modelItem) => {
+    console.log(modelItem);
     const name = modelItem.name || modelItem.label.toLowerCase();
     return (
       <div className="form-group" key={modelItem.label}>
