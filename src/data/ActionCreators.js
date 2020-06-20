@@ -6,6 +6,8 @@ export const loadData = (dataType, params) => {
   const data = {
     type: ActionTypes.DATA_LOAD,
     payload: dataSource.GetData(dataType, params).then((response) => {
+      console.log(`LOADING DATA ACTION CREATOR DATA RECIEVED ${new Date().toString() }`);
+      console.log(response.data);
       return {
         dataType,
         data: response.data,

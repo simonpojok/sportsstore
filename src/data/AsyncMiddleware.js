@@ -4,24 +4,12 @@ const isPromise = (payload) =>
 
 export const asyncActions = ({ getState, dispatch }) => (next) => (action) => {
   if (isPromise(action.payload)) {
+    console.log(`LOADING DATA ASYNC MIDDLEWARE ${new Date().toString() }`);
     action.payload.then((result) => {
+      console.log(result);
       return next({ ...action, payload: result });
     });
   } else {
     next(action);
   }
 };
-
-export function asyncActionsDeport({ getState, dispatch }) {
-  return function (next) {
-    return function (action) {
-      if (isPromise(action.payload)) {
-        action.payload.then((result) => {
-          return next({ ...action, payload: result });
-        });
-      } else {
-        next(action);
-      }
-    };
-  };
-}
