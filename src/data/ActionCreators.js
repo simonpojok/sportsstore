@@ -19,6 +19,7 @@ export const loadData = (dataType, params) => {
   return data;
 };
 export const setPageSize = (newSize) => {
+  console.log(`SETTING PAGE SIZE >> ${newSize} << ${new Date().toString()}`);
   return {
     type: ActionTypes.DATA_SET_PAGESIZE,
     payload: newSize,
@@ -26,6 +27,7 @@ export const setPageSize = (newSize) => {
 };
 
 export const setSortProperty = (newProps) => {
+  console.log(`SETTING SORT PROPERTY >> ${newProps} << ${new Date().toString()}`);
   return {
     type: ActionTypes.DATA_SET_SORT_PROPERTY,
     payload: newProps,

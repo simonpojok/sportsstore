@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 const mergeProps = (dataStore, actionCreators, router) => {
+  console.log(dataStore);
+  console.log(actionCreators);
+  console.log(router);
   return {
     ...dataStore,
     ...router,

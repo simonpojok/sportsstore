@@ -1,6 +1,7 @@
 import { ActionTypes, DataTypes } from "./Types";
 
 export const ShopReducer = (storeData, action) => {
+  console.log(`SHOP REDUCER >> ${action.type} << ${new Date().toString()}`);
   switch (action.type) {
     case ActionTypes.DATA_LOAD:
       const state = {
@@ -15,8 +16,10 @@ export const ShopReducer = (storeData, action) => {
       console.log(state);
       return state;
     case ActionTypes.DATA_SET_PAGESIZE:
+      console.log(`SETTING PAGE SIZE >> ${action.payload} << ${new Date().toString()}`);
       return { ...storeData, pageSize: action.payload };
     case ActionTypes.DATA_SET_SORT_PROPERTY:
+      console.log(`SETTING SORT PROPERTY >> ${action.payload} << ${new Date().toString()}`);
       return { ...storeData, sortKey: action.payload };
     case ActionTypes.DATA_STORE:
       if (action.payload.dataType === DataTypes.ORDERS) {
