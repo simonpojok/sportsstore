@@ -24,12 +24,14 @@ export class ValidatedForm extends React.Component {
       },
       () => {
         if (Object.keys(this.state.validationErrors).length === 0) {
-            // there is no errors
+          // there is no errors
           const data = Object.assign(
-            ...Object.entries(this.formElements).map((e) => ({
-              [e[0]]: e[1].value,
-            }))
+            ...Object.entries(this.formElements).map((e) => {
+              console.log(e[1]);
+              return { [e[0]]: e[1].value };
+            })
           );
+          console.log(data);
           this.props.submitCallback(data);
         }
       }
@@ -44,15 +46,15 @@ export class ValidatedForm extends React.Component {
   };
 
   renderElement = (modelItem) => {
-    console.log(modelItem);
     const name = modelItem.name || modelItem.label.toLowerCase();
     return (
       <div className="form-group" key={modelItem.label}>
-        <label>{modelItem.label}</label>
+        <label for={name}>{modelItem.label}</label>
         <ValidationError errors={this.state.validationErrors[name]} />
         <input
           className="form-control"
           name={name}
+          id={name}
           ref={this.registerRef}
           {...this.props.defaultAttrs}
           {...modelItem.attrs}
