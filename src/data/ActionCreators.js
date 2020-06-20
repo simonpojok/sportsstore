@@ -34,7 +34,7 @@ export const setSortProperty = (newProps) => {
   };
 };
 
-export const plaseOrder = (order) => {
+export const placeOrder = (order) => {
   return {
     type: ActionTypes.DATA_STORE,
     payload: dataSource.StoreData(DataTypes.ORDERS, order).then((response) => {
